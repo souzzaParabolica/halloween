@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Halloween</title>
+  </head>
+  <body class="bg-black">
+    <header
+      class="flex justify-between items-center fixed w-full z-20 py-5 px-[1rem] xl:px-[10rem] 2xl:px-[15rem]"
+    >
+      <img class="w-[80px]" src="Logo.png" alt="" />
+
+      <!-- Botão hamburger mobile -->
+      <button
+        id="menuBtn"
+        class="xl:hidden flex flex-col justify-center items-center gap-[6px] w-10 h-10 bg-white/10 rounded-md border border-white/30 hover:bg-white/20 transition-all"
+      >
+        <span class="w-6 h-[2px] bg-white rounded transition-all"></span>
+        <span class="w-6 h-[2px] bg-white rounded transition-all"></span>
+        <span class="w-6 h-[2px] bg-white rounded transition-all"></span>
+      </button>
+
+      <nav
+        id="menu"
+        class="flex justify-center items-center absolute top-[100%] left-0 w-full bg-black/90 flex-col gap-6 py-8 opacity-0 pointer-events-none transition-all duration-300 ease-in-out xl:static xl:flex xl:flex-row xl:bg-transparent xl:opacity-100 xl:pointer-events-auto"
+      >
+        <ul
+          class="flex flex-col xl:flex-row gap-6 justify-center items-center xl:gap-8 2xl:gap-10 text-white/80 font-sembibold text-xl"
+        >
+          <li class="cursor-pointer hover:font-bold">Home</li>
+          <li class="cursor-pointer hover:font-bold">The Forbidden Shelves</li>
+          <li class="cursor-pointer hover:font-bold">The Lost Stories</li>
+          <li class="cursor-pointer hover:font-bold">The Curator</li>
+        </ul>
+      </nav>
+      <button class="navButton text-sm bg-white/80 hover:text-white/80 xl:w-[280px]">
+        Close The Book
+      </button>
+    </header>
+    <section
+      class="hero w-full h-screen flex justify-center items-center px-[2rem] relative"
+    >
+      <h1
+        class="text-white/90 font-bold text-4xl xl:text-5xl 2xl:text-6xl xl:w-[60%] 2xl:w-[60%] z-10"
+      >
+        When the clock strikes twelve, the library awakens. Between the pages,
+        the whispers of forgotten souls echo again…
+      </h1>
+      <div class="overlay absolute top-0 left-0 w-full h-screen"></div>
+      <span
+        data-lucide="mouse"
+        class="mouseIcon absolute top-[80%] text-white/60 w-7 h-7"
+      ></span>
+    </section>
+
+    <!-- SECÃO DOS LIVROS -->
+
+    <section class="booksSection px-[2rem] xl:px-[10rem] 2xl:px-[15rem]">
+      <h2 class="text-4xl font-bold text-white/80">The Forbbiden Shelves</h2>
+      <div class="booksPai flex flex-col">
+        <div
+          class="books flex flex-col xl:flex-row 2xl:flex-row justify-center items-center gap-10 mt-10"
+        >
+          <div
+            class="dracula book xl:flex-1 rounded-lg bg-[#212121] flex flex-col justify-center items-center gap-6 p-6 h-[50vh]"
+          >
+            <p class="font-bold font-[poppins] text-4xl text-white/80">
+              The Blood Chronicle
+            </p>
+          </div>
+
+          <div
+            class="cavaleiro book xl:flex-1 rounded-lg bg-[#212121] flex flex-col justify-center items-center gap-6 p-6 h-[50vh]"
+          >
+            <p class="font-bold font-[poppins] text-4xl text-white/80">
+              The Hollow Harvest
+            </p>
+          </div>
+
+          <div
+            class="crismonMirror book xl:flex-1 rounded-lg bg-[#212121] flex flex-col justify-center items-center gap-6 p-6 h-[50vh]"
+          >
+            <p class="font-bold font-[poppins] text-4xl text-white/80">
+              The Crimson Mirror
+            </p>
+          </div>
+
+          <div
+            class="frankstein book xl:flex-1 rounded-lg bg-[#212121] flex flex-col justify-center items-center gap-6 p-6 h-[50vh]"
+          >
+            <p class="font-bold font-[poppins] text-4xl text-white/80">
+              The Patchwork Gospel
+            </p>
+          </div>
+        </div>
+
+        <!-- SEGUNDA FILEIRA DE LIVROS -->
+
+        <div
+          class="books flex flex-col xl:flex-row justify-center items-center gap-10 mt-10"
+        >
+          <div
+            class="bruxas book xl:flex-1 rounded-lg bg-[#212121] flex flex-col justify-center items-center gap-6 p-6 h-[50vh]"
+          >
+            <p class="font-bold font-[poppins] text-4xl text-white/80">
+              The Salem Testament
+
+            </p>
+          </div>
+
+          <div
+            class="dorian book xl:flex-1 rounded-lg bg-[#212121] flex flex-col justify-center items-center gap-6 p-6 h-[50vh]"
+          >
+            <p class="font-bold font-[poppins] text-4xl text-white/80">
+              The Mirror of Dorian
+
+            </p>
+          </div>
+
+          <div
+            class="fred book xl:flex-1 rounded-lg bg-[#212121] flex flex-col justify-center items-center gap-6 p-6 h-[50vh]"
+          >
+            <p class="font-bold font-[poppins] text-4xl text-white/80">
+              The Nightmare Manuscript
+
+            </p>
+          </div>
+
+          <div
+            class="dracula book xl:flex-1 rounded-lg bg-[#212121] flex flex-col justify-center items-center gap-6 p-6 h-[50vh]"
+          >
+            <p class="font-bold font-[poppins] text-4xl text-white/80">
+              The Nightmare Manuscript
+
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      lucide.createIcons();
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>

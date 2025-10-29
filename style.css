@@ -1,0 +1,130 @@
+@font-face {
+    font-family: "Clash Display";
+    src: url("ClashDisplay_Complete/ClashDisplay_Complete/Fonts/TTF/ClashDisplay-Variable.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,
+h1, h2 {
+    font-family: 'Clash Display', sans-serif;
+}
+
+ul li {
+    transition: all 0.3s ease;
+}
+
+ul li:hover {
+    color: orange;
+}
+
+.hero {
+    background-image: url(fundoHero.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.navButton {
+    padding: 12px 32px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: 0;
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: all 0.5s ease;
+}
+
+.navButton:hover {
+    letter-spacing: 3px;
+    background-color: hsl(35, 80%, 48%);
+    box-shadow: rgb(220, 155, 24) 0px 7px 29px 0px;
+}
+
+.navButton:active {
+    letter-spacing: 3px;
+    background-color: hsl(37, 80%, 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(220, 142, 24) 0px 0px 0px 0px;
+    transform: translateY(10px);
+    transition: 100ms;
+}
+
+.overlay{
+    background-image: linear-gradient(to bottom, black, rgba(0, 0, 0, 0.341), black);
+}
+
+.mouseIcon {
+    animation: mouseMove 2s infinite;
+}
+
+@keyframes mouseMove {
+    0% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(10px);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.dracula{
+    background-image: url(dracula.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cavaleiro {
+    background-image: url(cavaleiro.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.crismonMirror {
+    background-image: url(crismonMirror.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.frankstein {
+    background-image: url(frankstein.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bruxas {
+    background-image: url(bruxas.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.dorian {
+    background-image: url(mirror.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.fred {
+    background-image: url(fred.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
