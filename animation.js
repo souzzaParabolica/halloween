@@ -90,7 +90,7 @@ gsap.to(".lado2", {
     start: "top 60%",
     end: "top 20%",
     scrub: 2,
-    markers: true,
+    markers: false,
   },
 });
 
@@ -104,6 +104,6 @@ gsap.to(".lado1", {
     start: "top 60%",
     end: "top 20%",
     scrub: 2,
-    markers: true,
+    markers: false,
   },
 });
