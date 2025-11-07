@@ -206,73 +206,46 @@ ul li:hover {
 .parent {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
 }
 
-/* Seu layout original */
 .div1 {
-    grid-area: 1 / 1 / 2 / 3;
-}
-
-.div2 {
-    grid-area: 1 / 4 / 2 / 6;
-}
-
-.div3 {
-    grid-area: 2 / 2 / 3 / 4;
-}
-
-.div4 {
-    grid-area: 3 / 3 / 4 / 5;
-}
-
-.div5 {
-    grid-area: 4 / 4 / 6 / 6;
-}
-
-.div6 {
     grid-area: 4 / 1 / 5 / 3;
 }
 
-/* ✅ RESPONSIVE – tablets e celulares */
-@media (max-width: 900px) {
+.div2 {
+    grid-area: 4 / 4 / 5 / 6;
+}
+
+.div3 {
+    grid-area: 3 / 2 / 4 / 5;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
     .parent {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
+        /* transforma em 1 coluna */
         grid-template-rows: auto;
-        gap: 10px;
     }
 
     .div1 {
-        grid-area: unset;
+        grid-area: auto;
+        /* ocupa linha normal */
     }
 
     .div2 {
-        grid-area: unset;
+        grid-area: auto;
     }
 
     .div3 {
-        grid-area: unset;
+        grid-area: auto;
     }
-
-    .div4 {
-        grid-area: unset;
-    }
-
-    .div5 {
-        grid-area: unset;
-    }
-
-    .div6 {
-        grid-area: unset;
-    }
-
-    /* Eles empilham automaticamente */
 }
 
-/* ✅ RESPONSIVE – telas muito pequenas */
-@media (max-width: 500px) {
+@media (max-width: 480px) {
     .parent {
         grid-template-columns: 1fr;
+        /* mesma coisa para telas ainda menores */
     }
 }
 
@@ -299,54 +272,44 @@ ul li:hover {
     animation-delay: 1.5s;
 }
 
-@keyframes historias {
-    0% {
-        opacity: 1;
-    }
-
-    25% {
-        opacity: 0.5;
-    }
-
-    50% {
-        opacity: 0.8;
-    }
-
-    75% {
-        opacity: 0.6;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
 
 .guardiao {
     background-image: linear-gradient(to bottom, transparent, #0d0012);
 }
 
 .lado1 {
-    --ang1: 227.1782deg;
-    --ang2: 265.4007deg;
-    --ang3: 270.4116deg;
-    --ang4: 270.5258deg;
+    --ang1: 257.9989deg;
+    --ang2: 270.6686deg;
+    --ang3: 270.7665deg;
 
-    background: conic-gradient(from 180deg at 50% 50%,
-            rgba(0, 0, 0, 0.42) var(--ang1),
-            rgba(255, 217, 0, 0.18) var(--ang2),
-            #ffc26198 var(--ang3),
-            rgba(0, 0, 0, 0.22) var(--ang4));
+    background: conic-gradient(from 180deg at 50% 64.26%,
+            #000 var(--ang1),
+            rgba(255, 106, 0, 0.23) var(--ang2),
+            rgba(0, 0, 0, 0.62) var(--ang3));
+
+    flex-shrink: 0;
 }
 
 .lado2 {
-    --ang1: 89.4742deg;
-    --ang2: 89.5884deg;
-    --ang3: 94.5993deg;
-    --ang4: 132.8218deg;
+    --ang1: 89.2334deg;
+    --ang2: 89.3313deg;
+    --ang3: 101.9698deg;
 
-    background: conic-gradient(from 180deg at 50% 50%,
-            rgba(0, 0, 0, 0.22) var(--ang1),
-            #ffc26198 var(--ang2),
-            rgba(255, 217, 0, 0.18) var(--ang3),
-            rgba(0, 0, 0, 0.42) var(--ang4));
+    background: conic-gradient(from 180deg at 50% 64.26%,
+            rgba(0, 0, 0, 0.62) var(--ang1),
+            rgba(255, 106, 0, 0.23) var(--ang2),
+            #000 var(--ang3));
+
+    flex-shrink: 0;
+}
+
+.hist1, .hist2, .hist3 {
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+    cursor: default;
+}
+
+.hist{
+    opacity: 0;
+    cursor: default;
 }

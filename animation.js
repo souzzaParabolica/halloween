@@ -79,30 +79,128 @@ function initRevealAnimation() {
   );
 }
 
-
-gsap.to(".lado2", {
- "--ang1": "89.4742deg",
-"--ang2": "89.5884deg",
-"--ang3": "217.6925deg",
-"--ang4": "333.7370deg",
+const heroTimeline = gsap.timeline({
   scrollTrigger: {
-    trigger: ".lado2",
-    start: "top 60%",
-    end: "top 20%",
+    trigger: ".miniHistorias",
+    start: "top top", // quando o topo da seção encontrar o topo da viewport
+    end: "+=1500", // duração do "pin" em pixels rolados (ajuste conforme precisar)
+    scrub: false, // animação suave
+    pin: true, // fixa a seção na tela
+    markers: false, // só pra debug, pode remover
+  },
+});
+// TIMELINE 1: animação inicial
+gsap.timeline({
+  scrollTrigger: {
+    trigger: ".lado1",
+    start: "top -10%",
+    end: "top -50%",
     scrub: 2,
+    markers: false,
+  }
+})
+.to(".lado1", {
+  "--ang1": "32.7977deg",
+  "--ang2": "270.6686deg",
+  "--ang3": "270.7665deg",
+})
+.to(".lado2", {
+  "--ang1": "89.2334deg",
+  "--ang2": "89.3313deg",
+  "--ang3": "327.2022deg",
+}, 0); // 0 para sincronizar com .lado1
+
+// TIMELINE 2: animação seguinte
+gsap.timeline({
+  scrollTrigger: {
+    trigger: ".lado1",
+    start: "top -160%",
+    end: "top -230%",
+    scrub: 2,
+    markers: false,
+  }
+})
+  .to(".lado1", {
+  "--ang1": "257.9989deg",
+  "--ang2": "270.6686deg",
+  "--ang3": "270.7665deg",
+})
+.to(".lado2", {
+  "--ang1": "89.2334deg",
+  "--ang2": "89.3313deg",
+  "--ang3": "101.9698deg",
+}, 0); // sincronizado
+
+gsap.to('.lado1, .lado2', {
+  opacity:0,
+  scrollTrigger: {
+    trigger:'.lado1',
+    start:'top -210%',
+    end:'.top -235%',
+    scrub:2,
+  }
+})
+
+
+gsap.from(".hist1", {
+  opacity: 0,
+  y:5,
+  filter: "blur(5px)",
+  scrollTrigger: {
+    trigger: ".hist1",
+    start: "top -70%",
+    end: "top -80%",
+    scrub: 1.2,
     markers: false,
   },
 });
 
-gsap.to(".lado1", {
- "--ang1": "26.2630deg",
-"--ang2": "142.3075deg",
-"--ang3": "270.4116deg",
-"--ang4": "270.5258deg",
+gsap.from(".hist2", {
+  opacity: 0,
+  y:5,
+  filter: "blur(5px)",
   scrollTrigger: {
-    trigger: ".lado1",
-    start: "top 60%",
-    end: "top 20%",
+    trigger: ".hist2",
+    start: "top -70%",
+    end: "top -80%",
+    scrub: 1.2,
+    markers: false,
+  },
+});
+
+gsap.from(".hist3", {
+  opacity: 0,
+  y:5,
+  filter: "blur(5px)",
+  scrollTrigger: {
+    trigger: ".hist1",
+    start: "top -70%",
+    end: "top -80%",
+    scrub: 1.2,
+    markers: false,
+  },
+});
+
+gsap
+  .timeline({
+    scrollTrigger: {
+      trigger: ".hist",
+      start: "top -10%",
+      end: "top -75%", // cobre toda a faixa de aparecimento e desaparecimento
+      scrub: 1.2,
+      markers: false,
+    },
+  })
+  .fromTo(".hist", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 1 })
+  .to(".hist", { opacity: 0, duration: 1 });
+
+
+gsap.to(".parent", {
+  opacity: 0,
+  scrollTrigger: {
+    trigger: ".lado2",
+    start: "top -160%",
+    end: "top -180%",
     scrub: 2,
     markers: false,
   },
