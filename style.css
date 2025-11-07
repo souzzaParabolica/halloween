@@ -13,7 +13,7 @@
 
 /* Container para o efeito de revelação */
 .hero h1 {
-    visibility: visible;
+    visibility: hidden;
     position: relative;
     overflow: hidden;
 }
@@ -303,13 +303,15 @@ ul li:hover {
     flex-shrink: 0;
 }
 
-.hist1, .hist2, .hist3 {
+.hist1,
+.hist2,
+.hist3 {
     filter: blur(0px);
     -webkit-filter: blur(0px);
     cursor: default;
 }
 
-.hist{
+.hist {
     opacity: 0;
     cursor: default;
 }
