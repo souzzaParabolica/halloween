@@ -98,7 +98,7 @@ ul li:hover {
 }
 
 .overlay {
-    background-image: linear-gradient(to bottom, black, rgba(0, 0, 0, 0.341), black);
+    background-image: linear-gradient(to bottom, black, rgba(0, 0, 0, 0.577), black);
 }
 
 .mouseIcon {
